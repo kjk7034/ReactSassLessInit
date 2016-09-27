@@ -17,10 +17,12 @@ loaders 배열 안에 test: /\.css$/를 찾으면 쉽다. 그 다음에 추가
 ```
 {
   test: /\.less$/,
+  include: [paths.appSrc, paths.appNodeModules],
   loader: 'style!css!less!postcss'
 },
 {
   test: /\.scss$/,
+  include: [paths.appSrc, paths.appNodeModules],
   loader: 'style!css!sass!postcss'
 },
 ```
@@ -30,10 +32,12 @@ loaders 배열 안에 test: /\.css$/를 찾으면 쉽다. 그 다음에 추가
 ```
 {
   test: /\.less$/,
+  include: [paths.appSrc, paths.appNodeModules],
   loader: ExtractTextPlugin.extract('style', 'css?-autoprefixer!less!postcss')
 },
 {
   test: /\.scss$/,
+  include: [paths.appSrc, paths.appNodeModules],
   loader: ExtractTextPlugin.extract('style', 'css?-autoprefixer!sass!postcss')
 },
 ```
